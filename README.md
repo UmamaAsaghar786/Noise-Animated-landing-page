@@ -1,4 +1,4 @@
-# Noise-Animated-landing page
+# Smiling Hacker-Animated-landing page
 # 🔥 Animated Landing Page | HTML + CSS
 
 This is a stylish and interactive **Animated Landing Page** built using **HTML** and **CSS** only — no JavaScript! It features a unique layout and stunning animation effects where images slide directionally in a grid format, making the design come to life in a modern and engaging way.
@@ -16,7 +16,7 @@ This is a stylish and interactive **Animated Landing Page** built using **HTML**
 
 | Animation in Action | Static View |
 |---------------------|-------------|
-| ![Animated Screenshot](./your-image1.png) | ![Static Screenshot](./your-image2.png) |
+| ![Animated Screenshot](./my-image1.png) | ![Static Screenshot](./my-image2.png) |
 
 > 🔁 Top half showcases fluid image and text transitions.
 > 🧩 Bottom half uses a responsive grid structure with animated content blocks.
