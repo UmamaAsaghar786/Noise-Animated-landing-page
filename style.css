@@ -1,0 +1,316 @@
+*{
+    margin:0;
+    padding: 0;
+    font-family: sans-serif;
+    font-weight: bold;
+    box-sizing: border-box;
+}
+html,body{
+    width: 100vw;
+    height: 100vh;
+}
+.main{
+    width: 100vw;
+    height: 100vh;
+
+}
+.slider-wrapper {
+    position: relative;   /* So child images can be absolutely positioned inside */
+    width: 100vw;
+    height: 60vh;
+    overflow: hidden;     /* Hide parts of images that slide out */
+    background-color: rgb(1, 1, 1);
+  }
+  
+  /* Common styles for both images */
+  .img {
+    position: absolute;   /* Stack images on top of each other */
+    width: 40vw;
+    height: 60vh;
+    object-fit: cover;    /* Scale image nicely */
+  }
+  .img1 {
+    animation: slide1 4s ease-in-out infinite;  /* Run slide1 keyframes infinitely every 4 seconds */
+}
+
+/* Second image's animation */
+.img2 {
+    animation: slide2 4s ease-in-out infinite;  /* Run slide2 keyframes infinitely every 4 seconds */
+}
+/* Keyframes for first image (img1) */
+@keyframes slide1 {
+    0% {
+      transform: translateX(0%);  /* Start at center */
+      opacity: 1;                 /* Fully visible */
+    }
+    25% {
+      transform: translateX(-100%); /* Slide fully to the left */
+      opacity: 1;                   /* Still visible */
+    }
+    50% {
+      transform: translateX(-100%); /* Hold outside on left */
+      opacity: 0;                   /* Fade out */
+    }
+    75% {
+      transform: translateX(100%);  /* Move instantly to right, hidden */
+      opacity: 0;                   /* Still hidden */
+    }
+    100% {
+      transform: translateX(0%);    /* Come back to center from right */
+      opacity: 1;                   /* Fade in */
+    }
+  }
+  
+  /* Keyframes for second image (img2) */
+  @keyframes slide2 {
+    0% {
+      transform: translateX(100%);  /* Start off-screen right */
+      opacity: 0;                   /* Hidden */
+    }
+    25% {
+      transform: translateX(0%);    /* Slide to center */
+      opacity: 1;                   /* Fade in */
+    }
+    50% {
+      transform: translateX(0%);    /* Stay at center */
+      opacity: 1;                   /* Fully visible */
+    }
+    75% {
+      transform: translateX(-100%); /* Slide to the left */
+      opacity: 1;                   /* Still visible */
+    }
+    100%{
+      transform: translateX(-100%); /* Hold off-screen left */
+      opacity: 0;                   /* Fade out */
+    }
+  }
+  
+  .top-right{
+      width: 30vw;
+      height:50px ;
+      margin-left: 60vw;
+      display: flex;
+      gap: 0.5vw;
+      position: absolute;
+      margin-top: 7vw;
+      justify-content: center;
+  }
+  .circles{
+      height: 6vh;
+      width: 3vw;
+      border-radius: 50%;
+      background-color: white;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 100;
+  }
+  .circles i{
+      color: black;
+  }
+.bottom{
+    display: flex;
+    height: 40vh;
+    width: 100vw;
+}
+.part1{
+    height: 40vh;
+    width: 25vw;
+    background-color: #444;
+    padding-top: 7vh;
+    color: white;
+}
+.animated-heading, .animated-paragrph{
+    position: relative;
+    height: 2.5em;
+    overflow: hidden;
+}
+.animated-heading span, .animated-paragraph span{
+    position: absolute;
+    width: 25vw;
+    transform: translateY(100%);
+    transition: opacity 0.3s, transform 0.3s;
+}
+
+@keyframes slide-in-out-text1 {
+    0%, 40% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    50%, 100% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+  
+  @keyframes slide-in-out-text2 {
+    0%, 40% {
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    50%, 90% {
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    100% {
+      opacity: 0;
+      transform: translateY(-100%);
+    }
+  }
+  
+  /* Apply separately */
+  .animated-heading span.text1,
+  .animated-paragraph span.text1 {
+      animation: slide-in-out-text1 6s infinite;
+  }
+  
+  .animated-heading span.text2,
+  .animated-paragraph span.text2 {
+      animation: slide-in-out-text2 6s infinite;
+  }
+  
+.part2{
+    height: 40vh;
+    width: 25vw;
+    background-color: orange;
+    /* background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdvRkI6rq5VHuRpDPt_CUwNNTOwRnFRlzWPzMp41rewQp1YNHAEQMaWf0ZUhAYV4w1nxw8Gj-vw52lct57LL7_wLuCt8QpKxPzLEWWb_Ju5htKx8LNwZglEX4ApDfftfNLbwJCgNznw3Ai/s1600/402293891a9c5f872cd707cb15436760.jpg); */
+    background-size: cover;
+    animation: slide-image 3s ease-in infinite alternate;
+}
+@keyframes slide-image{
+    from{
+        background-image: url(https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEhdvRkI6rq5VHuRpDPt_CUwNNTOwRnFRlzWPzMp41rewQp1YNHAEQMaWf0ZUhAYV4w1nxw8Gj-vw52lct57LL7_wLuCt8QpKxPzLEWWb_Ju5htKx8LNwZglEX4ApDfftfNLbwJCgNznw3Ai/s1600/402293891a9c5f872cd707cb15436760.jpg);
+    }
+    to{
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQn7XB-Sy-0MnrQbhjoZApgfRs72dszKr0gUg&s);
+    }
+}
+.part3-top{
+    height: 20vh;
+    width: 25vw;
+    background-color: silver;
+    display: flex;
+    /* justify-content: center; */
+    /* align-items: center; */
+    /* padding: 2vw ; */
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    position: relative;
+}
+.Para1 span{
+    animation: slide1 5s ease-in infinite normal;
+    position: absolute;
+}
+.Para2 span{
+    animation: slide2 5s ease-in infinite normal;
+    position: absolute;
+}
+@keyframes slide1{
+    0%, 40% {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+      50%, 100% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+    }
+
+@keyframes slide2{
+    0%, 40% {
+        opacity: 0;
+        transform: translateX(100%);
+      }
+      50%, 90% {
+        opacity: 1;
+        transform: translateX(0%);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(-100%);
+      }
+}
+.part3-bottom{
+    height: 20vh;
+    width: 25vw;
+    background-image: url(https://www.teez.in/cdn/shop/products/Hacker-Rank-T-Shirt-1_large.jpg?v=1585732668);
+    background-size: cover;
+}
+.part4{
+    height: 100%;
+    width: 25%;
+    background-color: #444;
+    padding: 2vw;
+    color: white;
+    font-weight: bold;
+}
+.photo-circle{
+    height: 6vh;
+    width: 3vw;
+    border-radius: 50%;
+    background-color: #ffffff;
+    margin-top: 1vh;
+}
+.img11{
+    background-image: url(https://img.freepik.com/premium-photo/handsome-man-3_1089311-3121.jpg);
+    background-size: cover;
+}
+.img22{
+    background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEPan0brAnYXRwUnv8kNmOfLNyXP5DgenQvA&s);
+    background-size: cover;
+}
+.img11{
+    animation: change-img1 5s ease-in 5s infinite normal;
+}
+.img22{
+    animation:change-img2 5s ease-in 5s infinite normal;
+}
+
+@keyframes change-img1{
+    from{
+        background-image: url(https://img.freepik.com/premium-photo/handsome-man-3_1089311-3121.jpg);
+    }
+    to{
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTjKEtR74wFTZshu-PSmQeIcHhEWza2ab6NmA&s);
+    }
+}
+@keyframes change-img2{
+    from{
+        background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQEPan0brAnYXRwUnv8kNmOfLNyXP5DgenQvA&s);
+    }
+    to{
+        background-image: url(https://www.shutterstock.com/image-photo/close-head-shot-confident-serious-260nw-1481322794.jpg);
+    }
+}
+.text{
+    width: 100%;
+    bottom: 20%;
+    position: absolute;
+    padding: 0 6vw;
+    color: white;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.text h1{
+    font-size: 4vw;
+    font-weight: bold;
+}
+.text-right{
+    width: 50%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20vw;
+}
+.text-right p{
+    font-size: 18px;
+    font-family: sans-serif;
+    font-weight: bold;
+}
+a{
+    text-decoration: none;
+    color: whitesmoke;
+    font-size: 20px;
+}
